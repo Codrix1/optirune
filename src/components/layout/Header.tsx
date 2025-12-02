@@ -22,9 +22,9 @@ export const Header = () => {
             <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               About
             </Link>
-            <a href="/#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            {/* <a href="/#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Contact
-            </a>
+            </a> */}
           </nav>
 
           {/* <div className="flex items-center gap-3">

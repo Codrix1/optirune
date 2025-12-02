@@ -9,7 +9,7 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4 gradient-text">Optirune</h3>
             <p className="text-sm text-muted-foreground">
-              Optimizing platforms and processes for modern product teams.
+             Helping teams scale with intelligent websites, automated workflows, and powerful web apps
             </p>
           </div>
 
@@ -18,17 +18,17 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="/#services" className="hover:text-foreground transition-colors">
-                  Platform Engineering
+                  AI Agents & Automation
                 </a>
               </li>
               <li>
                 <a href="/#services" className="hover:text-foreground transition-colors">
-                  DevOps Consulting
+                  Website Development
                 </a>
               </li>
               <li>
                 <a href="/#services" className="hover:text-foreground transition-colors">
-                  Process Optimization
+                  Web App Development
                 </a>
               </li>
             </ul>
