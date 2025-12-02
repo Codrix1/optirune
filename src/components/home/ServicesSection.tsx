@@ -18,7 +18,7 @@ export const ServicesSection = () => {
     },
     {
       icon: GitBranch,
-      title: "DevOps Website Development",
+      title: "Website Development",
       badge: "Experience**",
       description: "Beautiful, modern websites built for speed, conversions, and seamless user experience—powered by intelligent automation.",
       features: [
