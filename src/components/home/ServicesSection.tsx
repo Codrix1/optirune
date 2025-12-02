@@ -5,40 +5,42 @@ export const ServicesSection = () => {
   const services = [
     {
       icon: Server,
-      title: "Platform Engineering",
+      title: "AI Agents & Automation",
       badge: "Core Service",
-      description: "Build scalable, maintainable platforms that empower your teams to ship faster.",
+      description: "Deploy custom AI agents that automate workflows, handle operations, and accelerate decision-making across your business.",
       features: [
-        "Infrastructure as Code",
-        "CI/CD Pipeline Design",
-        "Container Orchestration",
-        "Monitoring & Observability",
+        "Workflow Automation",
+        "Custom AI Agents",
+        "Knowledge Retrieval Systems",
+        "Business Process Integration",
       ],
-      tags: ["Kubernetes", "Terraform", "AWS"],
+      tags: ["OpenAI", "Automation", "RAG"],
     },
     {
       icon: GitBranch,
-      title: "DevOps Transformation",
-      badge: "Accelerator",
-      description: "Streamline your workflows and eliminate bottlenecks in your delivery process.",
+      title: "DevOps Website Development",
+      badge: "Experience**",
+      description: "Beautiful, modern websites built for speed, conversions, and seamless user experience—powered by intelligent automation.",
       features: [
-        "Process Optimization",
-        "Tool Chain Integration",
-        "Automation Strategy",
+        "Modern UI/UX",
+        "High-performance Frontend",
+        "SEO Optimization",
+        "Smart Content Automation"
       ],
-      tags: ["GitLab", "GitHub Actions"],
+      tags: ["Next.js", "React","Tailwind"],
     },
     {
       icon: Workflow,
-      title: "Process Optimization",
-      badge: "Efficiency",
-      description: "Identify and fix inefficiencies in your development and deployment workflows.",
+      title: "Web App Development",
+      badge: "Scalable**",
+      description: "Robust, reliable web apps crafted with clean engineering, automation, and intelligent workflows.",
       features: [
-        "Workflow Analysis",
-        "Bottleneck Identification",
-        "Performance Tuning",
+        "Custom Web Applications",
+        "API Integrations",
+        "Role-based Dashboards",
+        "Automated Testing & CI/CD"
       ],
-      tags: ["Metrics", "Analytics"],
+      tags: ["Node.js", "FastAPI","PostgreSQL"],
     },
   ];
 
@@ -50,10 +52,10 @@ export const ServicesSection = () => {
             Our Services
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            How We <span className="gradient-text">Optimize</span>
+            How We <span className="gradient-text">Build</span> Smarter Systems
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            End-to-end platform engineering and DevOps services tailored to your team's needs.
+            AI-powered automation, intelligent interfaces, and high-performance web platforms—designed to scale with your business.
           </p>
         </div>
 
@@ -102,23 +104,23 @@ export const ServicesSection = () => {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <Shield className="h-8 w-8 text-primary mx-auto mb-2" />
-              <h4 className="font-semibold mb-1">Secure by Default</h4>
+              <h4 className="font-semibold mb-1">Intelligent by Default</h4>
               <p className="text-sm text-muted-foreground">
-                Security best practices built into every solution
+                AI-driven logic and automation built into the core of every solution—websites, apps, and workflows alike.
               </p>
             </div>
             <div>
               <Cloud className="h-8 w-8 text-primary mx-auto mb-2" />
-              <h4 className="font-semibold mb-1">Cloud Native</h4>
+              <h4 className="font-semibold mb-1">Future-Proof Architecture</h4>
               <p className="text-sm text-muted-foreground">
-                Leveraging modern cloud architecture patterns
+                Scalable, modular systems designed to grow with your business and adapt to new technologies without rewrites.
               </p>
             </div>
             <div>
               <Code className="h-8 w-8 text-primary mx-auto mb-2" />
-              <h4 className="font-semibold mb-1">Developer First</h4>
+              <h4 className="font-semibold mb-1">Fast Delivery Cycle</h4>
               <p className="text-sm text-muted-foreground">
-                Prioritizing developer experience and productivity
+                A streamlined development process powered by automation, ensuring quicker launches and consistent improvements.
               </p>
             </div>
           </div>

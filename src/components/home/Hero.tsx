@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export const Hero = () => {
   const kpis = [
-    { icon: Zap, label: "50% faster deploys", value: "50%" },
-    { icon: Users, label: "30+ teams scaled", value: "30+" },
-    { icon: TrendingUp, label: "90% cost reduction", value: "90%" },
+    { icon: Zap, label: "Satisfied Customers", value: "100%" },
+    { icon: Users, label: "Web Projects Launched", value: "10+" },
+    { icon: TrendingUp, label: "Avg. Efficiency Boost", value: "90%" },
   ];
 
   return (
@@ -19,20 +19,19 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="inline-block">
             <span className="text-sm font-medium px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
-              Platform Engineering & DevOps Excellence
+              AI-Driven Experiences for Modern Businesses
             </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            Optimize Your{" "}
-            <span className="gradient-text">Platform</span>
+            Build Smarter{" "}
+            <span className="gradient-text">Websites</span>
             <br />
-            Ship Faster, Scale Better
+            Which Scale Faster with AI-Powered Digital Systems.
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We help product teams build robust platforms, streamline DevOps workflows, 
-            and accelerate delivery—without the complexity.
+            We create intelligent websites, automated workflows, and high-performance web apps—combining AI agents with clean engineering to help your business operate faster, leaner, and more efficiently.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -44,7 +43,7 @@ export const Hero = () => {
             </a>
             <a href="#contact">
               <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
-                Book Discovery Call
+              Book a Strategy Call
               </Button>
             </a>
           </div>

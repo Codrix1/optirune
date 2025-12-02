@@ -27,7 +27,7 @@ export const Header = () => {
             </a>
           </nav>
 
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <Link to="/auth?mode=login">
               <Button variant="ghost" size="sm">
                 Log in
@@ -38,7 +38,7 @@ export const Header = () => {
                 Sign up
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
