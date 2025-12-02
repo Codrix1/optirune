@@ -8,7 +8,7 @@ const Index = () => {
     <Layout>
       <Hero />
       <ServicesSection />
-      {/* <ContactSection /> */}
+      <ContactSection />
     </Layout>
   );
 };

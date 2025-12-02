@@ -48,7 +48,7 @@ export const ContactSection = () => {
                       href="mailto:hello@optirune.com"
                       className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                      hello@optirune.com
+                      Optirunesolutions@gmail.com
                     </a>
                   </div>
                 </div>
@@ -59,7 +59,7 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium mb-1">Phone</p>
-                    <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-sm text-muted-foreground">+20 155 636 2555</p>
                   </div>
                 </div>
 
