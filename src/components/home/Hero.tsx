@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import AnimatedContent from "../AnimatedContent";
 
 export const Hero = () => {
   const kpis = [
@@ -49,7 +50,20 @@ export const Hero = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12">
-            {kpis.map((kpi) => (
+
+              {kpis.map((kpi) => (
+            <AnimatedContent
+              distance={250}
+              direction="vertical"
+              reverse={false}
+              duration={1.2}
+              ease="power3.out"
+              initialOpacity={0.2}
+              animateOpacity
+              scale={1.1}
+              threshold={0.0}
+              delay={0.0}
+            >
               <div
                 key={kpi.label}
                 className="gradient-border p-6 rounded-lg bg-card/50 backdrop-blur-sm hover:neon-glow transition-all duration-300"
@@ -58,7 +72,10 @@ export const Hero = () => {
                 <div className="text-3xl font-bold gradient-text mb-1">{kpi.value}</div>
                 <div className="text-sm text-muted-foreground">{kpi.label}</div>
               </div>
+            </AnimatedContent> 
             ))}
+
+            
           </div>
         </div>
       </div>

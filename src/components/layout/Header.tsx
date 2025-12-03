@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
+import GradientText from "../GradientText";
 
 export const Header = () => {
   return (
@@ -10,9 +11,19 @@ export const Header = () => {
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative">
               <Zap className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-              <div className="absolute inset-0 blur-xl bg-primary/20 group-hover:bg-primary/40 transition-colors" />
+              <div className="absolute inset-0 blur-xl bg-primary/20 transition-colors" />
             </div>
-            <span className="text-xl font-bold gradient-text">Optirune</span>
+
+            <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+              animationSpeed={1}
+              showBorder={false}
+              className="custom-class text-xl font-bold"
+            >
+              Optirune
+            </GradientText>
+
+
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

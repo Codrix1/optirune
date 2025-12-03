@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Target, Users, Rocket, Award } from "lucide-react";
+import GradualBlur from "@/components/GradualBlur"
 
 const About = () => {
   const values = [
@@ -121,6 +122,16 @@ const About = () => {
           </div>
         </div>
       </section>
+      <GradualBlur
+        target="page"
+        position="bottom"
+        height="6rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        exponential={true}
+        opacity={1}
+      />
     </Layout>
   );
 };
