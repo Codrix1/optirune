@@ -1,7 +1,44 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Users, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
-import AnimatedContent from "../AnimatedContent";
+import { motion, type Easing } from "framer-motion";
+
+const easeOutQuart: Easing = [0.25, 0.46, 0.45, 0.94];
+
+const containerVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  initial: { opacity: 0, y: 30 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeOutQuart,
+    },
+  },
+};
+
+const kpiVariants = {
+  initial: { opacity: 0, scale: 0.8, y: 40 },
+  animate: (i: number) => ({
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      delay: 0.6 + i * 0.15,
+      duration: 0.5,
+      ease: easeOutQuart,
+    },
+  }),
+};
 
 export const Hero = () => {
   const kpis = [
@@ -12,72 +49,104 @@ export const Hero = () => {
 
   return (
     <section className="relative overflow-hidden section-padding">
-      {/* Ambient background effects */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      {/* Animated ambient background effects */}
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: [-10, 10, -10] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+      />
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: [10, -10, 10] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+      />
 
       <div className="container mx-auto relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-block">
-            <span className="text-sm font-medium px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
+        <motion.div
+          variants={containerVariants}
+          initial="initial"
+          animate="animate"
+          className="max-w-4xl mx-auto text-center space-y-8"
+        >
+          <motion.div variants={itemVariants} className="inline-block">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              className="text-sm font-medium px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 inline-block"
+            >
               AI-Driven Experiences for Modern Businesses
-            </span>
-          </div>
+            </motion.span>
+          </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-7xl font-bold tracking-tight"
+          >
             Build Smarter{" "}
             <span className="gradient-text">Websites</span>
             <br />
             Which Scale Faster with AI-Powered Digital Systems.
-          </h1>
+          </motion.h1>
 
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <motion.p
+            variants={itemVariants}
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+          >
             We create intelligent websites, automated workflows, and high-performance web apps—combining AI agents with clean engineering to help your business operate faster, leaner, and more efficiently.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#services">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <motion.a
+              href="#services"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button size="lg" className="bg-gradient-main hover:opacity-90 transition-opacity group">
                 Explore Services
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </a>
-            <a href="#contact">
+            </motion.a>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
-              Book a Strategy Call
+                Book a Strategy Call
               </Button>
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12">
-
-              {kpis.map((kpi) => (
-            <AnimatedContent
-              distance={250}
-              direction="vertical"
-              reverse={false}
-              duration={1.2}
-              ease="power3.out"
-              initialOpacity={0.2}
-              animateOpacity
-              scale={1.1}
-              threshold={0.0}
-              delay={0.0}
-            >
-              <div
+            {kpis.map((kpi, i) => (
+              <motion.div
                 key={kpi.label}
-                className="gradient-border p-6 rounded-lg bg-card/50 backdrop-blur-sm hover:neon-glow transition-all duration-300"
+                custom={i}
+                variants={kpiVariants}
+                initial="initial"
+                animate="animate"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(64, 255, 170, 0.3)",
+                }}
+                className="gradient-border p-6 rounded-lg bg-card/50 backdrop-blur-sm transition-all duration-300"
               >
-                <kpi.icon className="h-8 w-8 text-primary mx-auto mb-2" />
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <kpi.icon className="h-8 w-8 text-primary mx-auto mb-2" />
+                </motion.div>
                 <div className="text-3xl font-bold gradient-text mb-1">{kpi.value}</div>
                 <div className="text-sm text-muted-foreground">{kpi.label}</div>
-              </div>
-            </AnimatedContent> 
+              </motion.div>
             ))}
-
-            
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
